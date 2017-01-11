@@ -44,8 +44,8 @@ def main():
     config = ConfigParser.RawConfigParser()
     config.read('application.conf')
     whisper_home = config.get('application', 'whisper_home')
-    min_retention = config.get('application', 'min_retention')
-    
+    min_retention = config.getint('application', 'min_retention')
+
     logging.config.fileConfig('logging.conf')
 
     start_time = datetime.now()
